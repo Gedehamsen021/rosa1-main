@@ -93,7 +93,7 @@ body {
   top: 75px;
   height: 70px;
   box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.5);
-  animation: bloom2 3s ease-in-out;
+  animation: bloom2 3s ease-in-out, glowing 2.5s ease-in-out infinite;
   animation-fill-mode: forwards;
 }
 .petals > div:nth-child(3) {
@@ -140,37 +140,6 @@ body {
   box-shadow: 0px 0px 50px rgba(245, 148, 184, 0.3);
   animation: bloom7 3s ease-in-out, glowing 2.5s ease-in-out infinite;
   animation-fill-mode: forwards;
-}
-
-.deadPetals > div {
-  position: absolute;
-  background: #d52d58;
-  width: 20px;
-  height: 15px;
-  top: 120px;
-  border-radius: 0px 30px 0px 30px;
-  box-shadow: 0px 0px 30px rgba(245, 148, 184, 0.5);
-  transition: all 0.5s ease-out;
-}
-.deadPetals > div:nth-child(1) {
-  left: 95px;
-  transform: rotate(-30deg);
-  animation: falling 20s 4s ease-in-out infinite;
-}
-.deadPetals > div:nth-child(2) {
-  left: 62px;
-  transform: rotate(-30deg);
-  animation: falling 20s 8s ease-in-out infinite;
-}
-.deadPetals > div:nth-child(3) {
-  left: 78px;
-  transform: rotate(-30deg);
-  animation: falling 20s 12s ease-in-out infinite;
-}
-.deadPetals > div:nth-child(4) {
-  left: 100px;
-  transform: rotate(-30deg);
-  animation: falling 20s 16s ease-in-out infinite;
 }
 
 .leaves > div:nth-last-child(1) {
@@ -247,17 +216,8 @@ body {
 }
 
 @keyframes bloom2 {
-  50% {
-    transform: rotate(-90deg);
-    top: 200px;
-    left: 100px;
-  }
   100% {
-    transform: rotate(-60deg);
-    top: 252px;
-    left: 50px;
-    background: #71122a;
-    box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
+    transform: rotate(-45deg);
   }
 }
 @keyframes bloom3 {
@@ -291,14 +251,39 @@ body {
     box-shadow: 0px 0px 60px #f594b8;
   }
 }
-@keyframes falling {
-  20% {
-    top: 335px;
-    background: #9d193b;
-    box-shadow: 0px 0px 0px rgba(245, 148, 184, 0);
-  }
-  100% {
-    top: 335px;
-    opacity: 0;
+
+.text-container {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.subtitle {
+  color: #d52d58;
+  font: 1.2em/1.5 sans-serif;
+  text-shadow: 0 0 0.1em, 0 0 0.2em, 0 0 0.5em;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 4s ease-in;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+.message {
+  color: #d52d58;
+  font: bold 2.2em/1.5 sans-serif;
+  text-shadow: 0 0 0.1em, 0 0 0.2em, 0 0 0.5em;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 2s ease-in;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
