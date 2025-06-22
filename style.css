@@ -1,7 +1,7 @@
 body {
   height: 100%;
   width: 100%;
-  background: #000;
+  background: #090A0F;
   overflow: hidden;
 }
 
@@ -13,6 +13,7 @@ body {
 }
 
 .glass {
+  position: relative;
   height: 350px;
   width: 200px;
   background: #122139;
@@ -215,6 +216,11 @@ body {
   top: 230px;
 }
 
+.rose {
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
 @keyframes bloom2 {
   100% {
     transform: rotate(-45deg);
@@ -287,3 +293,58 @@ body {
     opacity: 1;
   }
 }
+
+@keyframes float {
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.star-rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: star-rain linear infinite;
+}
+
+@keyframes star-rain {
+  from {
+    transform: translateY(0vh) translateX(0vw);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh) translateX(-20vw);
+    opacity: 0;
+  }
+}
+
+.star:nth-child(1) { left: 10%; width: 2px; height: 2px; animation-duration: 5s; animation-delay: 0s; }
+.star:nth-child(2) { left: 20%; width: 1px; height: 1px; animation-duration: 6s; animation-delay: 1s; }
+.star:nth-child(3) { left: 30%; width: 2px; height: 2px; animation-duration: 4s; animation-delay: 0.5s; }
+.star:nth-child(4) { left: 40%; width: 1px; height: 1px; animation-duration: 7s; animation-delay: 2s; }
+.star:nth-child(5) { left: 50%; width: 3px; height: 3px; animation-duration: 3s; animation-delay: 1.5s; }
+.star:nth-child(6) { left: 60%; width: 1px; height: 1px; animation-duration: 8s; animation-delay: 3s; }
+.star:nth-child(7) { left: 70%; width: 2px; height: 2px; animation-duration: 5.5s; animation-delay: 2.5s; }
+.star:nth-child(8) { left: 80%; width: 1px; height: 1px; animation-duration: 6.5s; animation-delay: 4s; }
+.star:nth-child(9) { left: 90%; width: 2px; height: 2px; animation-duration: 4.5s; animation-delay: 3.5s; }
+.star:nth-child(10) { left: 5%; width: 1px; height: 1px; animation-duration: 9s; animation-delay: 5s; }
+.star:nth-child(11) { left: 15%; width: 3px; height: 3px; animation-duration: 3.5s; animation-delay: 4.5s; }
+.star:nth-child(12) { left: 25%; width: 1px; height: 1px; animation-duration: 7.5s; animation-delay: 6s; }
+.star:nth-child(13) { left: 35%; width: 2px; height: 2px; animation-duration: 5.2s; animation-delay: 5.5s; }
+.star:nth-child(14) { left: 45%; width: 1px; height: 1px; animation-duration: 8.5s; animation-delay: 7s; }
+.star:nth-child(15) { left: 55%; width: 2px; height: 2px; animation-duration: 4.8s; animation-delay: 6.5s; }
+.star:nth-child(16) { left: 65%; width: 1px; height: 1px; animation-duration: 9.5s; animation-delay: 8s; }
+.star:nth-child(17) { left: 75%; width: 3px; height: 3px; animation-duration: 3.2s; animation-delay: 7.5s; }
+.star:nth-child(18) { left: 85%; width: 1px; height: 1px; animation-duration: 10s; animation-delay: 9s; }
+.star:nth-child(19) { left: 95%; width: 2px; height: 2px; animation-duration: 6.2s; animation-delay: 8.5s; }
+.star:nth-child(20) { left: 2%; width: 1px; height: 1px; animation-duration: 11s; animation-delay: 10s; }
